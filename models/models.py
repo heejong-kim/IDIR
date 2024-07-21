@@ -4,10 +4,10 @@ import torch.optim as optim
 import os
 import tqdm
 
-from .utils import general
-from .networks import networks
-from .objectives import ncc
-from .objectives import regularizers
+from ..utils import general
+from ..networks import networks
+from ..objectives import ncc
+from ..objectives import regularizers
 
 
 class ImplicitRegistrator:
