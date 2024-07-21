@@ -89,10 +89,10 @@ def load_image_DIRLab(variation=1, folder=r"./Case"):
         data = np.fromfile(f, dtype)
     image_exp = data.reshape(shape)
 
-    imgsitk_in = sitk.ReadImage(folder + r"Masks/case" + str(variation) + "_T00_s.mhd")
+    imgsitk_in = sitk.ReadImage(folder + r"Masks/case" + str(variation) + "_T00_s.nii.gz")
 
     mask = np.clip(sitk.GetArrayFromImage(imgsitk_in), 0, 1)
-
+    #
     image_insp = torch.FloatTensor(image_insp)
     image_exp = torch.FloatTensor(image_exp)
 
