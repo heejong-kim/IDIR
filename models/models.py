@@ -412,3 +412,5 @@ class ImplicitRegistrator:
         # Perform training iterations
         for i in tqdm.tqdm(range(epochs)):
             self.training_iteration(i)
+
+        torch.save(self.network.state_dict(), os.path.join(self.save_folder,'network.pt'))

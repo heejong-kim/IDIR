@@ -125,6 +125,7 @@ def load_image_DIRLab(variation=1, folder=r"./Case"):
 
 
 def fast_trilinear_interpolation(input_array, x_indices, y_indices, z_indices):
+    # real world coordinate conversion
     x_indices = (x_indices + 1) * (input_array.shape[0] - 1) * 0.5
     y_indices = (y_indices + 1) * (input_array.shape[1] - 1) * 0.5
     z_indices = (z_indices + 1) * (input_array.shape[2] - 1) * 0.5
@@ -147,6 +148,7 @@ def fast_trilinear_interpolation(input_array, x_indices, y_indices, z_indices):
     y = y_indices - y0
     z = z_indices - z0
 
+    # trilinear interpolation implemented
     output = (
         input_array[x0, y0, z0] * (1 - x) * (1 - y) * (1 - z)
         + input_array[x1, y0, z0] * x * (1 - y) * (1 - z)
